@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geeth - Songs of Every Soul</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"> -->
+</head>
+
+<body class="body">
+  <div class="container-1 d-flex justify-center align-item-center">
+    <div class="left  mt-3 ml-2 ">
+      <div class="head-box bg-gray border-radius-2">
+        <img class="close invert" width="30" src="https://gudigarrohit.github.io/Geeth/img_svg_video/close.svg" alt="">
+        <div class="logo  pt-1 pl-2 ">
+          <a href=""><img src="https://gudigarrohit.github.io/Geeth/img_svg_video/geeth_logo.png" class="invert" width="35" alt="">Geeth</a>
+        </div>
+        <div>
+          <ul>
+            <li class="ml-4"><img src="https://gudigarrohit.github.io/Geeth/img_svg_video/home.svg" class="invert" width="18" alt="">Home</li>
+            <li>
+              <div class="search-bar mt-1 mb-1">
+                <button class="search-btn ml-2" data-target="songSearch1">
+                  <img src="https://gudigarrohit.github.io/Geeth/img_svg_video/search.svg" class="invert" width="17" alt="">
+                </button>
+                <input type="text" id="songSearch1" placeholder="Search songs..." />
+                <ul id="searchResults1"></ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="library-box  bg-gray border-radius-2 ">
+        <div class="library pl-3 d-flex pt-3 "><img src="https://gudigarrohit.github.io/Geeth/img_svg_video/library.svg" class="invert" width="25"
+            alt="">Your Library</div>
+        <div class="library-song-list  mt-3">
+          <ul>
+          </ul>
+        </div>
+        <div class="footer ">
+          <div>
+            <a href="#">
+              <span>Legal</span>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <span>Safety & Privacy Center</span>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <span>Privacy Policy</span>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <span>Cookies</span>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <span>About Ads</span>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <span>Accessibility</span>
+            </a>
+          </div>
+          <div>
+            <a href="#" target="_blank">
+              <span>Cookies</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=" right  mt-3 ml-1 mr-2 bg-gray mb-1 border-radius-2  ">
+      <div class=" navbar-right bg-gray2 border-radius d-flex p-1 ">
+        <img class="humberger invert" src="https://gudigarrohit.github.io/Geeth/img_svg_video/humberger.svg" alt="">
+        <div class="heading ">
+          <h5 class="strong">Geeth Playlist</h5>
+        </div>
+        <div class="buttons d-flex gap pr-2">
+          <button id="signin-btn">Sign Up</button>
+          <button id="login-btn">Login</button>
+        </div>
+      </div>
+      <div class="Geethplaylists">
+        <div class="search-bar mb-3 d-none" id="right-search-bar">
+          <button class="search-btn ml-2" data-target="songSearch2">
+            <img src="https://gudigarrohit.github.io/Geeth/img_svg_video/search.svg" class="invert" width="17" alt="Search">
+          </button>
+          <input type="text" id="songSearch2" placeholder="Search songs..." />
+          <ul id="searchResults2"></ul>
+        </div>
+
+        <div class="cardcontainer  d-flex flex-wrap gap">
+
+        </div>
+      </div>
+      <div class="playbar">
+        <div class="play-menu d-flex ">
+          <div class="seekbar">
+            <div class="progresion"></div>
+            <div class="circle"></div>
+          </div>
+          <div class="song-info  d-flex align-item-center justify-content-center "></div>
+          <div class="songsbutton gap-1 d-flex invert">
+            <img id="previous" src="https://gudigarrohit.github.io/Geeth/img_svg_video/previous.svg" width="45" alt="">
+            <img id="play" src="https://gudigarrohit.github.io/Geeth/img_svg_video/play.svg" width="45" alt="">
+            <img id="next" src="https://gudigarrohit.github.io/Geeth/img_svg_video/next.svg" width="45" alt="">
+          </div>
+          <div class="song-time  d-flex align-item-center justify-content-center">
+          </div>
+          <img src="https://gudigarrohit.github.io/Geeth/img_svg_video/loop.svg" alt="" id="loop" class="invert">
+          <div class="volume d-flex align-item-center">
+            <img class="invert" src="https://gudigarrohit.github.io/Geeth/img_svg_video/volume.svg" width="21" alt="">
+            <div class="range d-flex align-item-center ">
+              <input type="range" name="volume" class="stylish-range mt-2">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+ <script src="script.js"></script>
+</body>
+
+</html>

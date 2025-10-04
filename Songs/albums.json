@@ -1,0 +1,22 @@
+{
+  "albums": [
+    {
+      "folder": "HindiSongs",
+      "title": "Ur Mine",
+      "description": "Songs for you",
+      "cover": "Songs/HindiSongs/cover.jpeg"
+    },
+    {
+      "folder": "KannadaSongs",
+      "title": "Kannada Beats",
+      "description": "Songs for you",
+      "cover": "Songs/KannadaSongs/cover.jpeg"
+    },
+       {
+      "folder": "Mine",
+      "title": "My beat",
+      "description": "Songs of melody",
+      "cover": "Songs/Mine/cover.jpeg"
+    }
+  ]
+}
