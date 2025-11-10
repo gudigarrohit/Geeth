@@ -135,7 +135,7 @@ async function displayAlbum() {
                 if (Songs.length > 0) {
                     playMusic(Songs[0], `https://gudigarrohit.github.io/Geeth/Songs/${album.folder}`);
                 }
-               ` <div>No Songs available in this album.</div>`
+                ` <div>No Songs available in this album.</div>`
             });
 
         });
@@ -239,7 +239,7 @@ async function main() {
 
     await getAllSongs(); // Fetch all songs for search
     await getSong("/Songs/Mine"); // Load default folder
-        playMusic(Songs[-1],true); // Play first song from default folder
+    playMusic(Songs[-1], true); // Play first song from default folder
     await displayAlbum();
 
 
@@ -359,18 +359,46 @@ async function main() {
         }
     });
 
-
     // --- Song Ended Handling ---
     currentSong.addEventListener("ended", () => {
         const playBtn = document.querySelector("#play");
-        let currentFile = decodeURIComponent(currentSong.src.split("/").pop()).replace(".mp3", "");
-        let index = Songs.indexOf(currentFile);
 
-        if (isOneTimeLoop && !hasRepeatedOnce) { currentSong.currentTime = 0; currentSong.play(); hasRepeatedOnce = true; }
-        else if (isLooping) { currentSong.currentTime = 0; currentSong.play(); }
-        else if (index < Songs.length - 1) { playMusic(Songs[index + 1]); currentSong.play(); }
-        else { playBtn.src = "https://gudigarrohit.github.io/Geeth/img_svg_video/play.svg"; }
+        let currentFile = decodeURIComponent(
+            currentSong.src.split("/").pop()
+        ).replace(/\.mp3$/i, "").trim();
+
+        // Find exact match ignoring .mp3 differences
+        let index = Songs.findIndex(song =>
+            song.replace(/\.mp3$/i, "").trim() === currentFile
+        );
+
+        // One-time loop (repeat the song only once)
+        if (isOneTimeLoop && !hasRepeatedOnce) {
+            currentSong.currentTime = 0;
+            currentSong.play();
+            hasRepeatedOnce = true;
+            return;
+        }
+
+        // Infinite loop of the same song
+        if (isLooping) {
+            currentSong.currentTime = 0;
+            currentSong.play();
+            return;
+        }
+
+        // ✅ Infinite playlist looping
+        if (index !== -1) {
+            let nextIndex = (index + 1) % Songs.length;  // loops back to start
+            playMusic(Songs[nextIndex]);
+            return;
+        }
+
+        // If something goes wrong (rare)
+        console.warn("Current song not found in Songs[]");
+        playBtn.src = "https://gudigarrohit.github.io/Geeth/img_svg_video/play.svg";
     });
+
 
     // --- Sidebar ---
 
