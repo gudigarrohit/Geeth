@@ -135,6 +135,7 @@ async function displayAlbum() {
                 if (Songs.length > 0) {
                     playMusic(Songs[0], `https://gudigarrohit.github.io/Geeth/Songs/${album.folder}`);
                 }
+               ` <div>No Songs available in this album.</div>`
             });
 
         });
@@ -232,13 +233,13 @@ setupSearch("songSearch1", "searchResults1");
 setupSearch("songSearch2", "searchResults2");
 
 
+
 // ---------- Main Function ----------
 async function main() {
 
     await getAllSongs(); // Fetch all songs for search
     await getSong("/Songs/Mine"); // Load default folder
-        playMusic(Songs[0],true); // Play first song from default folder
-    
+        playMusic(Songs[-1],true); // Play first song from default folder
     await displayAlbum();
 
 
